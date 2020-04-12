@@ -1,0 +1,91 @@
+.wrap{
+	width: 1200px;
+	height: 580px;
+	margin:100px auto;
+	position: relative;
+}
+	
+body{
+	background-color: #262626;
+}
+*{
+	margin:0px;
+	padding:0px;
+}
+ul{
+	list-style: none;
+}
+.slide{
+	width: 100%;
+	height: 580px;
+}
+.slide li{
+	position: absolute;	
+	width:800px;
+	top:80px;
+	left: 200px
+	/* 第一张图片 */
+/* 	width:400px;
+	top:0px;
+	left: 50px;
+	opacity: 0.3;
+	z-index: 1; */
+	
+	/* 第二张图片 */
+	/* width:600px;
+	top:50px;
+	left: 0px;
+	opacity: 0.8;
+	z-index: 2; */
+	
+	/* 第三张图片 */
+/* 	width:800px;
+	top:80px;
+	left: 200px;
+	opacity: 1;
+	z-index: 3; */
+	
+	/* 第四张图片 */
+	/* width:600px;
+	top:50px;
+	left: 600px;
+	opacity: 0.8;
+	z-index: 2; */
+	
+	/* 第五张图片 */
+	/* width:400px;
+	top:0px; 
+	left: 750px;
+	opacity: 0.3;
+	z-index: 1; */
+}
+.slide li img{
+	width: 100%;
+}
+.arrow{
+	width: 100%;
+	position: absolute;
+	height: 74px;
+	left:0px;
+	top:50%;
+	margin-top:-37px;
+	z-index: 100;
+	opacity: 0;
+}
+.arrow .prev{
+	width: 36px;
+	height: 74px;
+	display: block;
+	float: left;
+	background: url(../img/prev.png) no-repeat center center;
+	margin-left: 20px;
+}
+
+.arrow .next{
+	margin-right: 20px;
+	width: 36px;
+	height: 74px;
+	display: block;
+	float: right;
+	background: url(../img/next.png) no-repeat center center;
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="css/xzma.css">
+	</head>
+	<body>
+		<div class="wrap" id="wrap">
+			<div class="slide" id="slide">
+				<ul>
+					<li>
+						<a href="#">
+							<img src="img/slidepic1.png" alt="">
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="img/slidepic2.png" alt="">
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="img/slidepic3.png" alt="">
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="img/slidepic4.png" alt="">
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="img/slidepic5.png" alt="">
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="arrow">
+				<a href="javascript:;" class="prev"></a>
+				<a href="javascript:;" class="next"></a>
+			</div>
+		</div>
+		<script src="js/base.js"></script>
+		<script>
+			var json = [{
+				width: 400,
+				top: 0,
+				left: 50,
+				opacity: 30,
+				z: 1
+			}, {
+				width: 600,
+				top: 50,
+				left: 0,
+				opacity: 80,
+				z: 2,
+			}, {
+				width: 800,
+				top: 80,
+				left: 200,
+				opacity: 100,
+				z: 3
+			}, {
+				width: 600,
+				top: 50,
+				left: 600,
+				opacity: 80,
+				z: 2
+			}, {
+				width: 400,
+				top: 0,
+				left: 750,
+				opacity: 30,
+				z: 1
+			}]
+			var slide = $("#slide");
+			var wrap = $("#wrap");
+			var lis = slide.children[0].children;
+			var arrow = $(".arrow")[0];
+			var as = arrow.children;
+
+
+			wrap.onmouseover = function() {
+				animate(arrow, {
+					"opacity": 100
+				});
+			}
+			wrap.onmouseout = function() {
+				animate(arrow, {
+					"opacity": 0
+				});
+			}
+
+			console.log(as);
+			var liuzhuan = true;
+
+			for (k in as) {
+
+				as[k].onclick = function() {
+					if (this.className == "prev") {
+						if (liuzhuan) {
+							liuzhuan = false;
+							change(true)
+						}
+					} else {
+						if (liuzhuan) {
+							liuzhuan = false;
+							change(false)
+						}
+					}
+				}
+			}
+
+			change();
+
+			function change(flag) {
+
+				if (flag) {
+
+					json.unshift(json.pop())
+				} else {
+
+					json.push(json.shift())
+				}
+
+				for (var i = 0; i < lis.length; i++) {
+					animate(lis[i], {
+						"width": json[i].width,
+						"top": json[i].top,
+						"left": json[i].left,
+						"opacity": json[i].opacity,
+						"zIndex": json[i].z
+					}, function() {
+						liuzhuan = true;
+					})
+				}
+			}
+		</script>
+	</body>
+</html>
