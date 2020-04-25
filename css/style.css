@@ -346,7 +346,7 @@ dl.project dd .label {
     line-height: 32px;
     white-space: nowrap;
     overflow: hidden;
-    list-style: decimal-leading-zero inside;
+    /* list-style: decimal-leading-zero inside; */
     color: #666;
     font-weight: 300;
 }
